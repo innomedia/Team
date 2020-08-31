@@ -1,0 +1,9 @@
+---
+Name: teamroutes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    'member//$ID': 'Team\Pages\TeamPageController'

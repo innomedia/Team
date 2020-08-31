@@ -1,0 +1,18 @@
+---
+Name: teamfluent
+Only:
+  moduleexists: 'tractorcow/silverstripe-fluent'
+After:
+  - '#versionedfiles'
+---
+Team\DataObjects\TeamCategory:
+  extensions:
+    - TractorCow\Fluent\Extension\FluentExtension
+  field_exclude:
+    - TagSortTitle
+Team\DataObjects\TeamMember:
+  extensions:
+    - TractorCow\Fluent\Extension\FluentExtension
+  translate:
+    - Title
+    - Position

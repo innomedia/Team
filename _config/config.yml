@@ -1,0 +1,7 @@
+---
+Name: TeamModule
+---
+#Overwrite in own project if necessary
+TeamModuleConfig:
+  CategoriesEnabled: false
+  DetailViewEnabled: false

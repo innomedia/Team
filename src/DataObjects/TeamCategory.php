@@ -18,11 +18,9 @@ class TeamCategory extends DataObject
         'Sort' => 'Int',
         'TagSortTitle' => 'Text'
     ];
-
     private static $belongs_many_many = [
         'TeamMembers' => TeamMember::class
     ];
-
     private static $has_one = [
         'TeamPage' => \Team\Pages\TeamPage::class,
     ];
@@ -50,7 +48,11 @@ class TeamCategory extends DataObject
 
     public function SortedTeamMembers()
     {
-        return $this->TeamMembers()->sort("Sort ASC");
+        $filter = array();
+        foreach ($this->TeamMembers() as $teamMember) {
+            array_push($filter, $teamMember->ID);
+        }
+        return $this->TeamPage()->TeamMember()->filter(array("ID" => $filter))->sort("SortOrder ASC");
     }
 
     public function onAfterWrite()

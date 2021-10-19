@@ -5,7 +5,6 @@ use Team\DataObjects\TeamMember;
 use SilverStripe\Control\Controller;
 use SilverStripe\Forms\DropdownField;
 use SilverStripe\Widgets\Model\Widget;
-use SilverStripe\Forms\CheckboxField;
 
 if (!class_exists(Widget::class)) {
     return;
@@ -39,6 +38,7 @@ class TeamWidget extends Widget
      */
     private static $db = [
     ];
+
     /**
      * @var array
      */

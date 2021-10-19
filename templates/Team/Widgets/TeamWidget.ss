@@ -1,38 +1,21 @@
-<% require themedCSS('components/_team') %>
-<div class="team pb-2">
-    <% with $TeamMember %>
-      <div class="typography teammember_detail mb-3">
-        <img class="img-fluid mb-4 img-shadow" src="$Image.FocusFill(500,500).URL" />
-        <div class="team__name mt-2 mb-3">
-            <h5 class="card-title mb-0">Von $Title</h5>
-            <p class="mb-3">$Position</p>
-            <div>
-              <% if $Phone %>
-                  <button type="button" class="btn btn-small-square mr-2" data-toggle="tooltip" data-placement="bottom" title="$Phone">
-                      <i class="fal fa-phone"></i>
-                  </button>
-              <% end_if %>
-
-              <% if $Mobile %>
-                  <button type="button" class="btn btn-small-square mr-2" data-toggle="tooltip" data-placement="bottom" title="$Mobile">
-                      <i class="fal fa-mobile"></i>
-                  </button>
-              <% end_if %>
-
-              <% if $Fax %>
-                  <button type="button" class="btn btn-small-square mr-2" data-toggle="tooltip" data-placement="bottom" title="$Fax">
-                      <i class="fal fa-fax"></i>
-                  </button>
-              <% end_if %>
-
-              <% if $Mail %>
-                  <button type="button" class="btn btn-small-square mr-2" data-toggle="tooltip" data-placement="bottom" title="$Mail">
-                      <i class="fal fa-envelope"></i>
-                  </button>
-              <% end_if %>
-
+<%-- require themedCSS('components/_team.css') --%>
+<%-- require themedCSS('components/_blog.css') --%>
+<div class="typography">
+  <div class="bg_blue bg_ansprechpartner shadow mb-30 pt-50 pl-20 pr-20 border-radius-bottom-right_30 typography">
+    <span class="h2"><%t Team.YOURCONTACTPERSON "Ihr Ansprechpartner" %></span>
+  </div>
+  <% with TeamMember %>
+    <span class="h2">$Title</span>
+    <span class="date">$Position</span>
+    <% if $Phone %>
+      <div>
+          <span class="font_blue font_bold personDataDecore">T</span><span>$Phone</span>
       </div>
-    </div>
-    </div>
+    <% end_if %>
+    <% if $Mail %>
+      <div>
+        <span class="font_blue font_bold personDataDecore">M</span><span>$Mail</span>
+      </div>
+    <% end_if %>
   <% end_with %>
 </div>

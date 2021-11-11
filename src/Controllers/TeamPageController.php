@@ -14,11 +14,11 @@ class TeamPageController extends PageController
     ];
 
     public function member() {
-        $teammember = TeamMember::get()->filter("URLSegment",$this->request->latestParam('ID'));
+        $teammember = TeamMember::get()->filter("URLSegment",Convert::raw2sql($this->request->latestParam('ID')));
         if(count($teammember) == 1) {
             $templateData = [
                 "TeamMember" => $teammember->First(),
-                'BackLink'		=> (($this->request->getHeader('Referer')) ? $this->request->getHeader('Referer') : $this->Link()),
+                'BackLink'		=> ((Convert::raw2sql($this->request->getHeader('Referer'))) ? Convert::raw2sql($this->request->getHeader('Referer')) : $this->Link()),
             ];
             return $this->customise(new ArrayData($templateData))->renderWith(["TeamMember","Page"]);
         } else {

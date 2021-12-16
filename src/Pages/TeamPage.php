@@ -69,7 +69,7 @@ class TeamPage extends Page
             "CopyToSubsiteWithChildren",
             "action_copytosubsite"
          ]);
-        $this->extend('updateCMSFields', $fields);
+        $this->extend('updateTeamCMSFields', $fields);
         
         return $fields;
     }

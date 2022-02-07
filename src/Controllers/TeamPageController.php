@@ -5,8 +5,9 @@ use PageController;
 use SilverStripe\Dev\Debug;
 use SilverStripe\View\ArrayData;
 use Team\DataObjects\TeamMember;
-use SilverStripe\ORM\PaginatedList;
-
+use SilverStripe\ORM\PaginatedList
+use SilverStripe\Core\Convert;
+	
 class TeamPageController extends PageController
 {
     private static $allowed_actions = [

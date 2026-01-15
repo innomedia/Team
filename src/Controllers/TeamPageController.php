@@ -3,7 +3,7 @@ namespace Team\Pages;
 
 use PageController;
 use SilverStripe\Dev\Debug;
-use SilverStripe\View\ArrayData;
+use SilverStripe\Model\ArrayData;
 use Team\DataObjects\TeamMember;
 use SilverStripe\ORM\PaginatedList;
 use SilverStripe\Core\Convert;
